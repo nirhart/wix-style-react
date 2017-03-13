@@ -84,4 +84,7 @@ export const googleAddressWithInputTestkitFactory = enzymeTestkitFactoryCreator(
 import messageBoxFunctionalLayoutDriverFactory from '../src/MessageBox/MessageBoxFunctionalLayout.driver';
 export const messageBoxFunctionalLayoutTestkitFactory = enzymeTestkitFactoryCreator(messageBoxFunctionalLayoutDriverFactory);
 
+import messageBoxMarketerialLayoutDriverFactory from '../src/MessageBox/MessageBoxMarketerialLayout.driver';
+export const messageBoxMarketerialLayoutTestkitFactory = enzymeTestkitFactoryCreator(messageBoxMarketerialLayoutDriverFactory);
+
 export {toastTestkitFactory} from '../src/Toast/testkit/Toast.enzyme';
