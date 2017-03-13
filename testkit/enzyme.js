@@ -81,4 +81,7 @@ export const fieldWithSelectionCompositeTestkitFactory = enzymeTestkitFactoryCre
 import googleAddressWithInputDriverFactory from '../src/GoogleAddressInputWithLabel/GoogleAddressInputWithLabel.driver';
 export const googleAddressWithInputTestkitFactory = enzymeTestkitFactoryCreator(googleAddressWithInputDriverFactory);
 
+import messageBoxFunctionalLayoutDriverFactory from '../src/MessageBox/MessageBoxFunctionalLayout.driver';
+export const messageBoxFunctionalLayoutTestkitFactory = enzymeTestkitFactoryCreator(messageBoxFunctionalLayoutDriverFactory);
+
 export {toastTestkitFactory} from '../src/Toast/testkit/Toast.enzyme';

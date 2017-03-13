@@ -1,4 +1,4 @@
-import {MessageBoxLayout1, MessageBoxLayout2, HeaderLayout1, FooterLayout1} from './MessageBox';
+import {MessageBoxLayout1, MessageBoxFunctionalLayout, HeaderLayout, FooterLayout} from './MessageBox';
 
 export {default as Button} from './Button';
 export {default as ButtonLayout} from './ButtonLayout';
@@ -8,7 +8,7 @@ export {default as InputWithOptions} from './InputWithOptions';
 export {default as Checkbox} from './Checkbox';
 export {default as ToggleSwitch} from './ToggleSwitch';
 export {default as Modal} from './Modal';
-export {MessageBoxLayout1, MessageBoxLayout2, HeaderLayout1, FooterLayout1};
+export {MessageBoxLayout1, MessageBoxFunctionalLayout, MessageBoxFunctionalLayout as MessageBoxLayout2, HeaderLayout, FooterLayout};
 export {default as RadioGroup} from './RadioGroup';
 export {default as Slider} from './Slider';
 export {default as GoogleAddressInput} from './GoogleAddressInput';

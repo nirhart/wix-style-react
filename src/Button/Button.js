@@ -33,12 +33,12 @@ class Button extends WixComponent {
   }
 
   render() {
-    const {disabled, onClick, children, type} = this.props;
+    const {disabled, onClick, children, type, dataHook} = this.props;
     const buttonLayoutProps = omit(this.props, ['id', 'onClick', 'prefixIcon', 'suffixIcon', 'type']);
 
     return (
       <ButtonLayout {...buttonLayoutProps}>
-        <button onClick={onClick} disabled={disabled} type={type}>
+        <button onClick={onClick} disabled={disabled} type={type} data-hook={dataHook}>
           {this.addPrefix()}
           {children}
           {this.addSuffix()}
@@ -58,7 +58,8 @@ Button.propTypes = Object.assign({},
     children: React.PropTypes.any,
     prefixIcon: React.PropTypes.node,
     suffixIcon: React.PropTypes.node,
-    type: React.PropTypes.string
+    type: React.PropTypes.string,
+    dataHook: React.PropTypes.string
   }
 );
 

@@ -2,11 +2,11 @@ import React from 'react';
 import Button from '../Button';
 import * as styles from './FooterLayout.scss';
 
-const FooterLayout1 = ({children, style, theme, cancelText, onCancel, onOk, confirmText}) => {
+const FooterLayout = ({children, style, theme, cancelText, onCancel, onOk, confirmText}) => {
   //TODO When deprecation ends, _theme won't be needed.
   let _theme;
   if (style) {
-    console.warn('[wix-style-react>FooterLayout1] Warning. Property \'style\' has been deprecated, and will be removed Jan 1st 2017. Please use \'theme\' instead.');
+    console.warn('[wix-style-react>FooterLayout] Warning. Property \'style\' has been deprecated, and will be removed Jan 1st 2017. Please use \'theme\' instead.');
     _theme = style;
   } else {
     _theme = theme;
@@ -17,11 +17,11 @@ const FooterLayout1 = ({children, style, theme, cancelText, onCancel, onOk, conf
       {children}
       <div className={styles.footerbuttons}>
         {cancelText ?
-          <Button height="small" theme={'empty' + _theme} onClick={onCancel} >
+          <Button height="small" theme={'empty' + _theme} onClick={onCancel} data-hook="cancellation-button" >
             {cancelText}
           </Button> : null
         }
-        <Button height="small" theme={'full' + _theme} onClick={onOk} >
+        <Button height="small" theme={'full' + _theme} onClick={onOk} data-hook="confirmation-button">
           {confirmText}
         </Button>
       </div>
@@ -29,7 +29,7 @@ const FooterLayout1 = ({children, style, theme, cancelText, onCancel, onOk, conf
   );
 };
 
-FooterLayout1.propTypes = {
+FooterLayout.propTypes = {
   confirmText: React.PropTypes.string,
   cancelText: React.PropTypes.string,
   onCancel: React.PropTypes.func,
@@ -39,8 +39,8 @@ FooterLayout1.propTypes = {
   children: React.PropTypes.any
 };
 
-FooterLayout1.defaultProps = {
+FooterLayout.defaultProps = {
   theme: 'blue'
 };
 
-export default FooterLayout1;
+export default FooterLayout;

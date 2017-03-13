@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MessageBoxLayout1 from 'wix-style-react/MessageBox/MessageBoxLayout1';
-import MessageBoxLayout2 from 'wix-style-react/MessageBox/MessageBoxLayout2';
+import MessageBoxFunctionalLayout from 'wix-style-react/MessageBox/MessageBoxFunctionalLayout';
 import Button from 'wix-style-react/Button';
 
 const NgIf = ({show, children}) => show ? children : null;
@@ -25,7 +25,7 @@ class ControlledMessageBoxes extends Component {
             <Button onClick={openLayout1} >Show MessageBoxLayout1</Button>
           </div>
           <div style={{display: 'inline-block', padding: '0 5px'}}>
-            <Button onClick={openLayout2} >Show MessageBoxLayout2</Button>
+            <Button onClick={openLayout2} >Show MessageBoxFunctionalLayout</Button>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ class ControlledMessageBoxes extends Component {
         </NgIf>
 
         <NgIf show={this.state.opened === 'layout2'}>
-          <MessageBoxLayout2
+          <MessageBoxFunctionalLayout
             title={<span>This is title</span>}
             primaryButtonLabel="Got It"
             confirmText="Confirm"
@@ -56,7 +56,7 @@ class ControlledMessageBoxes extends Component {
             <div>
               All of your pages are indexed and now come up as separate search results on Google. This is great for your visbility!
             </div>
-          </MessageBoxLayout2>
+          </MessageBoxFunctionalLayout>
         </NgIf>
       </div>
     );
