@@ -3,9 +3,9 @@ import React from 'react';
 import Button from '../Button';
 import SvgX from '../svg/X.js';
 
-import * as styles from './MessageBoxLayout1.scss';
+import * as styles from './MessageBoxMarketerialLayout.scss';
 
-const MessageBoxLayout1 = ({title, content, primaryButtonLabel, secondaryButtonLabel, onPrimaryButtonClick, onSecondaryButtonClick, imageUrl, onClose}) => {
+const MessageBoxMarketerialLayout = ({title, content, primaryButtonLabel, secondaryButtonLabel, onPrimaryButtonClick, onSecondaryButtonClick, imageUrl, onClose}) => {
   return (
     <div className={styles.root}>
       <div className={styles.header}>
@@ -40,7 +40,7 @@ const MessageBoxLayout1 = ({title, content, primaryButtonLabel, secondaryButtonL
   );
 };
 
-MessageBoxLayout1.propTypes = {
+MessageBoxMarketerialLayout.propTypes = {
   title: React.PropTypes.node.isRequired,
   content: React.PropTypes.node.isRequired,
   primaryButtonLabel: React.PropTypes.string.isRequired,
@@ -51,4 +51,4 @@ MessageBoxLayout1.propTypes = {
   onClose: React.PropTypes.func.isRequired
 };
 
-export default MessageBoxLayout1;
+export default MessageBoxMarketerialLayout;

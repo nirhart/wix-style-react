@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MessageBoxLayout1 from 'wix-style-react/MessageBox/MessageBoxLayout1';
+import MessageBoxMarketerialLayout from 'wix-style-react/MessageBox/MessageBoxMarketerialLayout';
 import MessageBoxFunctionalLayout from 'wix-style-react/MessageBox/MessageBoxFunctionalLayout';
 import Button from 'wix-style-react/Button';
 
@@ -22,7 +22,7 @@ class ControlledMessageBoxes extends Component {
       <div>
         <div style={{padding: '0 5px 16px'}}>
           <div style={{display: 'inline-block', padding: '0 5px'}}>
-            <Button onClick={openLayout1} >Show MessageBoxLayout1</Button>
+            <Button onClick={openLayout1} >Show MessageBoxMarketerialLayout</Button>
           </div>
           <div style={{display: 'inline-block', padding: '0 5px'}}>
             <Button onClick={openLayout2} >Show MessageBoxFunctionalLayout</Button>
@@ -30,7 +30,7 @@ class ControlledMessageBoxes extends Component {
         </div>
 
         <NgIf show={this.state.opened === 'layout1'}>
-          <MessageBoxLayout1
+          <MessageBoxMarketerialLayout
             title={<span>Looking Good! <br/> Your Site Is On Google</span>}
             content="All of your pages are indexed and now come up as separate search results on Google. This is great for your visbility!"
             primaryButtonLabel="Got It"
