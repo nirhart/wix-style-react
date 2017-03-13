@@ -3,28 +3,13 @@ import MessageBoxFunctionalLayout from './MessageBoxFunctionalLayout';
 import MessageBoxFunctionalLayoutFactory from './MessageBoxFunctionalLayout.driver';
 import {createDriverFactory} from '../test-common';
 import sinon from 'sinon';
-//import {isTestkitExists, isEnzymeTestkitExists} from '../../testkit/test-common';
-//import {messageBoxLayout2DriverFactory} from '../../testkit';
-//import {messageBoxLayout2DriverFactory as enzymeMessageBoxTestkitFactory} from '../../testkit/enzyme';
+import {isTestkitExists, isEnzymeTestkitExists} from '../../testkit/test-common';
+import {messageBoxFunctionalLayoutTestkitFactory} from '../../testkit';
+import {messageBoxFunctionalLayoutDriverFactory as enzymeMessageBoxTestkitFactory} from '../../testkit/enzyme';
 
-/**
- * hideFooter: React.PropTypes.bool,
- confirmText: React.PropTypes.string,
- cancelText: React.PropTypes.string,
- style: React.PropTypes.string,
- theme: React.PropTypes.string,
- onOk: React.PropTypes.func,
- onCancel: React.PropTypes.func,
- title: React.PropTypes.node,
- children: React.PropTypes.any
- */
+
 describe('MessageBox', () => {
   const createDriver = createDriverFactory(MessageBoxFunctionalLayoutFactory);
-
-  /*const messageBoxToRender = (props) => {
-    return (<MessageBoxPromptLayout {...props}/>);
-  };*/
-
   describe('action buttons', () => {
     it('should display the confirmation text on top the confirmation button', () => {
       const props = {
@@ -87,7 +72,7 @@ describe('MessageBox', () => {
     });
   });
 
-  describe('genral', () => {
+  describe('general', () => {
 
     it(`should hide the footer`, () => {
       const props = {
@@ -101,7 +86,7 @@ describe('MessageBox', () => {
       const props = {
       };
       const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
-      expect(driver.getFooter()).toBeDefined();
+      expect(driver.getFooter()).not.toBeNull();
     });
 
     it(`should render title`, () => {
@@ -122,17 +107,17 @@ describe('MessageBox', () => {
     });
   });
 
- /* describe('testkit', () => {
+  describe('testkit', () => {
     it('should exist', () => {
-      expect(isTestkitExists(<MessageBoxPromptLayout/>, messageBoxTestkitFactory)).toBe(true);
+      expect(isTestkitExists(<MessageBoxFunctionalLayout/>, messageBoxFunctionalLayoutTestkitFactory)).toBe(true);
     });
   });
 
-  describe('enzyme testkit', () => {
-    it('should exist', () => {
-      expect(isEnzymeTestkitExists(<MessageBoxPromptLayout/>, enzymeMessageBoxTestkitFactory)).toBe(true);
-    });
-  });
-*/
+  // describe('enzyme testkit', () => {
+    // it('should exist', () => {
+      // expect(isEnzymeTestkitExists(<MessageBoxFunctionalLayout/>, enzymeMessageBoxTestkitFactory)).toBe(true);
+    // });
+  // });
+
 
 });

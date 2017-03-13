@@ -3,19 +3,11 @@ import classNames from 'classnames';
 import styles from './HeaderLayout.scss';
 import SvgX from '../svg/X.js';
 
-const HeaderLayout = ({title, onCancel, style, theme}) => {
-  //TODO When deprecation ends, _theme won't be needed.
-  let _theme;
-  if (style) {
-    console.warn('[wix-style-react>HeaderLayout] Warning. Property \'style\' has been deprecated, and will be removed Jan 1st 2017. Please use \'theme\' instead.');
-    _theme = style;
-  } else {
-    _theme = theme;
-  }
-//className={classNames(styles.header, styles[_theme], 'test')}
+const HeaderLayout = ({title, onCancel, theme}) => {
+
   return (
-    <div className={classNames(styles.header, styles[_theme], 'test')} data-hook="header-layout" >
-      <span className={styles.titleLabel}>
+    <div className={classNames(styles.header, styles[theme])} data-hook="header-layout">
+      <span className={styles.titleLabel} data-hook="header-layout-title">
         {title}
       </span>
       <button className={styles.close} onClick={onCancel}>
@@ -32,7 +24,6 @@ HeaderLayout.defaultProps = {
 HeaderLayout.propTypes = {
   title: React.PropTypes.node,
   onCancel: React.PropTypes.func,
-  style: React.PropTypes.oneOf(['red', 'green', 'blue', 'lightGreen']),
   theme: React.PropTypes.oneOf(['red', 'green', 'blue', 'lightGreen'])
 };
 
