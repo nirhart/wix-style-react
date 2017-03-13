@@ -13,7 +13,7 @@ const FooterLayout = ({children, style, theme, cancelText, onCancel, onOk, confi
   }
 
   return (
-    <div className={styles.footer} >
+    <div className={styles.footer} data-hook="message-box-footer">
       {children}
       <div className={styles.footerbuttons}>
         {cancelText ?

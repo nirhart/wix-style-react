@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import * as styles from './HeaderLayout.scss';
+import styles from './HeaderLayout.scss';
 import SvgX from '../svg/X.js';
 
 const HeaderLayout = ({title, onCancel, style, theme}) => {
@@ -12,9 +12,9 @@ const HeaderLayout = ({title, onCancel, style, theme}) => {
   } else {
     _theme = theme;
   }
-
+//className={classNames(styles.header, styles[_theme], 'test')}
   return (
-    <div className={classNames(styles.header, styles[_theme])} >
+    <div className={classNames(styles.header, styles[_theme], 'test')} data-hook="header-layout" >
       <span className={styles.titleLabel}>
         {title}
       </span>

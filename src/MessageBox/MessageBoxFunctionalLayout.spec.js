@@ -71,30 +71,54 @@ describe('MessageBox', () => {
 
   describe('theme attribute', () => {
     it('should set the theme by default to "blue"', () => {
-
+      const props = {
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
+      expect(driver.isThemeExist('blue')).toBeTruthy();
     });
 
-    it('should allowing setting the theme to "green"', () => {
-
-    });
-
-    it('should allow setting the theme to "red"', () => {
-
+    it('should allowing setting the theme', () => {
+      const props = {
+        theme: 'green'
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
+      expect(driver.isThemeExist('green')).toBeTruthy();
+      expect(driver.isThemeExist('blue')).toBeFalsy();
     });
   });
 
   describe('genral', () => {
 
     it(`should hide the footer`, () => {
+      const props = {
+        hideFooter: true
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
+      expect(driver.getFooter()).toBeNull();
+    });
 
+    it(`should show footer by default`, () => {
+      const props = {
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
+      expect(driver.getFooter()).toBeDefined();
     });
 
     it(`should render title`, () => {
-
+      const props = {
+        title: 'title'
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}/>);
+      expect(driver.getTitle()).toBe(props.title);
     });
 
     it(`should render the passed children in the markup`, () => {
-
+      const props = {
+      };
+      const driver = createDriver(<MessageBoxFunctionalLayout {...props}>
+        <div data-hook="inner-div"/>
+      </MessageBoxFunctionalLayout>);
+      expect(driver.getChildBySelector('[data-hook="inner-div"]')).not.toBeNull();
     });
   });
 
