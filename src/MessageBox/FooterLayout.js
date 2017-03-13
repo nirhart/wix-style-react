@@ -17,11 +17,11 @@ const FooterLayout = ({children, style, theme, cancelText, onCancel, onOk, confi
       {children}
       <div className={styles.footerbuttons}>
         {cancelText ?
-          <Button height="small" theme={'empty' + _theme} onClick={onCancel} data-hook="cancellation-button" >
+          <Button height="small" theme={'empty' + _theme} onClick={onCancel} dataHook="cancellation-button" >
             {cancelText}
           </Button> : null
         }
-        <Button height="small" theme={'full' + _theme} onClick={onOk} data-hook="confirmation-button">
+        <Button height="small" theme={'full' + _theme} onClick={onOk} dataHook="confirmation-button">
           {confirmText}
         </Button>
       </div>
