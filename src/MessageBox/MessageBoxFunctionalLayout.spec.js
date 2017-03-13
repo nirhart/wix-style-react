@@ -5,7 +5,7 @@ import {createDriverFactory} from '../test-common';
 import sinon from 'sinon';
 import {isTestkitExists, isEnzymeTestkitExists} from '../../testkit/test-common';
 import {messageBoxFunctionalLayoutTestkitFactory} from '../../testkit';
-import {messageBoxFunctionalLayoutDriverFactory as enzymeMessageBoxTestkitFactory} from '../../testkit/enzyme';
+import {messageBoxFunctionalLayoutTestkitFactory as enzymeMessageBoxTestkitFactory} from '../../testkit/enzyme';
 
 
 describe('MessageBox', () => {
@@ -113,11 +113,11 @@ describe('MessageBox', () => {
     });
   });
 
-  // describe('enzyme testkit', () => {
-    // it('should exist', () => {
-      // expect(isEnzymeTestkitExists(<MessageBoxFunctionalLayout/>, enzymeMessageBoxTestkitFactory)).toBe(true);
-    // });
-  // });
+  describe('enzyme testkit', () => {
+    it('should exist', () => {
+      expect(isEnzymeTestkitExists(<MessageBoxFunctionalLayout/>, enzymeMessageBoxTestkitFactory)).toBe(true);
+    });
+  });
 
 
 });
